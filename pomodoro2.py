@@ -11,7 +11,13 @@ if question in ["yes", "y", "sim", "s"]:
     end_time = start_time + timer
     while time.time() < end_time:
         time_left = end_time - time.time()
-        print(f"Time left: {int(time_left)} seconds", end="\r")
+        minutes = int(time_left / 60)
+        seconds = int(time_left % 60)
+        # seconds_left = end_time - time.time()
+        print(
+            f"Time left: {minutes} minutos and {seconds} seconds",
+            end="\r",
+        )
         # \r faz o texto sobrepor a si mesmo na mesma linha para dar o efeito de cooldown
         time.sleep(1)
     print("Time is up!")
